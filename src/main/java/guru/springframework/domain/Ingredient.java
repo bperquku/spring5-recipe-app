@@ -11,10 +11,12 @@ import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Data
+@EqualsAndHashCode(exclude= {"recipe"})
 @Entity
 public class Ingredient {
 
@@ -30,6 +32,8 @@ public class Ingredient {
 
 	@OneToOne(fetch = FetchType.EAGER)
 	private UnitOfMeasure unitOfMeasure;
+	
+	public Ingredient() {}
 	
 	public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom) {
 		this.description = description;
