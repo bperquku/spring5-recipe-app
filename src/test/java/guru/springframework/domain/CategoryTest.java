@@ -1,4 +1,4 @@
-package guru.springframework;
+package guru.springframework.domain;
 
 import static org.junit.Assert.*;
 

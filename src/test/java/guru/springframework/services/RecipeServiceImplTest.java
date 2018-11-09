@@ -1,4 +1,4 @@
-package guru.springframework;
+package guru.springframework.services;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.times;
