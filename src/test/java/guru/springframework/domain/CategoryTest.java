@@ -30,7 +30,7 @@ public class CategoryTest {
 
 	@Test
 	public void testGetRecipes() {
-	
+		assertEquals(1, 1);
 	}
 
 }
