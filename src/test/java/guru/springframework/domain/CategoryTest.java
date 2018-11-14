@@ -25,6 +25,7 @@ public class CategoryTest {
 
 	@Test
 	public void testGetDescription() {
+		assertEquals(1, 1);
 	}
 
 	@Test
