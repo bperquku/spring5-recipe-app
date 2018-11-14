@@ -8,7 +8,6 @@ import org.junit.Test;
 import guru.springframework.domain.Category;
 
 public class CategoryTest {
-
 	Category category;
 	
 	@Before
