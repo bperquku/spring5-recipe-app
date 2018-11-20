@@ -16,21 +16,30 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import guru.springframework.converters.RecipeCommandToRecipe;
+import guru.springframework.converters.RecipeToRecipeCommand;
 import guru.springframework.domain.Recipe;
 import guru.springframework.repositories.RecipeRepository;
 import guru.springframework.services.RecipeServiceImpl;
 
 public class RecipeServiceImplTest {
-	
+
 	RecipeServiceImpl recipeService;
 
 	@Mock
 	RecipeRepository recipeRepository;
 
+	@Mock
+	RecipeToRecipeCommand recipeToRecipeCommand;
+
+	@Mock
+	RecipeCommandToRecipe recipeCommandToRecipe;
+
 	@Before
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
-		recipeService = new RecipeServiceImpl(recipeRepository);
+
+		recipeService = new RecipeServiceImpl(recipeRepository, recipeCommandToRecipe, recipeToRecipeCommand);
 	}
 
 	@Test
@@ -58,9 +67,9 @@ public class RecipeServiceImplTest {
 
 		Set<Recipe> recipes = recipeService.getRecipes();
 		assertEquals(1, recipes.size());
-		
-		verify(recipeRepository,times(1)).findAll();
-		verify(recipeRepository,never()).findById(anyLong());
+
+		verify(recipeRepository, times(1)).findAll();
+		verify(recipeRepository, never()).findById(anyLong());
 
 	}
 
