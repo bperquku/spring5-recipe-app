@@ -64,10 +64,12 @@
 											class="form-control" th:field="*{cookTime}" />
 									</div>
 									<div class="col-md-3 form-group">
-										<label>Difficulty:</label> <select class="form-control">
-											<option>Easy</option>
-											<option>Medium</option>
-											<option>Hard</option>
+										<label>Difficulty:</label> <select class="form-control"
+											th:field="*{difficulty}">
+											<option
+												th:each="diffucultyValue : ${T(guru.springframework.domain.Difficulty).values()}"
+												th:value="${diffucultyValue.name()}"
+												th:text="${diffucultyValue.name()}">val</option>
 										</select>
 									</div>
 								</div>
