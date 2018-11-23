@@ -2,11 +2,7 @@ package guru.springframework.commands;
 
 import java.util.HashSet;
 import java.util.Set;
-
-import guru.springframework.domain.Category;
 import guru.springframework.domain.Difficulty;
-import guru.springframework.domain.Ingredient;
-import guru.springframework.domain.Notes;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
